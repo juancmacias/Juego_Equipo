@@ -5,6 +5,7 @@
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
   <script src="https://rawgit.com/caseyyee/aframe-ui-widgets/master/dist/aframe-ui-widgets.min.js"></script>
+  <script src="https://unpkg.com/aframe-sun-sky@3.0.3/dist/aframe-sun-sky.min.js"></script>
 </head>
 
 <body>
@@ -12,7 +13,8 @@
     <!-- Adds hand controls -->
     <a-entity hand-controls="left"></a-entity>
     <a-entity hand-controls="right"></a-entity>
-    <a-sky src="https://raw.githubusercontent.com/Xaival/WebGL-A-frame/main/Sistema%20solar/Texturas/0.V%C3%ADa%20L%C3%A1ctea.webp"></a-sky>
+
+    <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"></a-sky>
     <!-- Can also be controlled used with cursor -->
     <a-camera position="0 1 0">
       <a-text value="Puntuaciones" color="white" position="0 1.2 -2" width="1.5" align="center"></a-text>
@@ -23,9 +25,7 @@
         <a-text value="Presiona el boton para iniciar el juego" color="white" position="0 -0.03 -0.2" width="0.4" align="center"></a-text>
       <a-cursor></a-cursor>
     </a-camera>
-      <a-torus-knot position="0 3 0" material="shader:phong; reflectivity: 0.9; shininess: 30;"
-        >
-      </a-torus-knot>
+
     <!-- Adds UI button widget -->
     <a-entity id="mybutton" ui-button position="0 0 -2"></a-entity>
   </a-scene>
