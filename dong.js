@@ -7,10 +7,14 @@ setInterval(function(){
   document.querySelector('#nivel').setAttribute('value', "Level "+nivel);
   document.querySelector('#time').setAttribute('value', tiempo/1000 + " secund");
   if(tiempo === 0){
+    if(nivel === 3){
+      location.href='gamehover.html';
+    }
     nivel +=1;
     segundo -= 1000;
     tiempo = 60000;  
   }
+  
   console.log("tiempo "+ tiempo);
   console.log("Mostrar "+ segundo); 
 
@@ -36,6 +40,8 @@ AFRAME.registerComponent("generator", {
       });
       obj.setAttribute("scale", '0.'+ scala +' 0.'+ scala+' 0.'+scala);
       obj.setAttribute('shootable', '');
+      obj.setAttribute('sound', 'src: #carga; volume:20; autoplay: true');
+      
       obj.setAttribute('material', 'shader:phong; reflectivity: 0.9; shininess: 30;');
       obj.setAttribute("animation-mixer", "clip:RobotArmature|Robot_Running");
       obj.setAttribute("class", "collidable");
@@ -89,6 +95,7 @@ AFRAME.registerComponent('shootable', {
         seleccionado.addEventListener('click', () => {
           //seleccionado.removeChild(this.el)
           //var seleccion = document.querySelector('a-text').value;
+            seleccionado.setAttribute('sound', 'src: #roto; volume:30; autoplay: true');
             seleccionado.setAttribute("animation-mixer", "clip:RobotArmature|Robot_Death");
 
             seleccionado.removeAttribute('animation');
@@ -111,7 +118,6 @@ AFRAME.registerComponent('shootable_f', {
 
             seleccionado.removeAttribute('animation');
             eliminar(seleccionado);
-            
             score += 2;
             document.querySelector('a-text').setAttribute('value', score)
         })
@@ -124,7 +130,7 @@ function eliminar(selecc){
     console.log("Nulo ")
   }else{
     console.log("remove "+ selecc.parentNode.this)
-    //selecc.parentNode.removeChild(selecc)
+
     setInterval(function () {
       selecc.parentNode.removeChild(selecc)
     }, 900);

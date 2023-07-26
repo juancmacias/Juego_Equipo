@@ -10,6 +10,9 @@
 
 <body>
   <a-scene>
+    <a-assets>
+      <audio id="disparo" src="sonido/soundscrate-body_impact_wood_8.mp3" preload="auto"></audio>
+    </a-assets>
     <!-- Adds hand controls -->
     <a-entity hand-controls="left"></a-entity>
     <a-entity hand-controls="right"></a-entity>
@@ -17,6 +20,7 @@
     <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"></a-sky>
     <!-- Can also be controlled used with cursor -->
     <a-camera position="0 1 0">
+      
       <a-text value="Puntuaciones" color="white" position="0 1.2 -2" width="1.5" align="center"></a-text>
       
         <a-text value="Nombre" color="white" position="-0.5 1 -2" width="1.5" align="center"></a-text>
@@ -27,13 +31,16 @@
     </a-camera>
 
     <!-- Adds UI button widget -->
-    <a-entity id="mybutton" ui-button position="0 0 -2"></a-entity>
+    <a-entity sound="src: #disparo;volume:1; on: click" id="mybutton" ui-button position="0 0 -2"></a-entity>
   </a-scene>
   <script>
   var mybutton = document.querySelector('#mybutton');
   mybutton.addEventListener('pressed', function () {
     console.log("Hemos hecho click");
-    location.href='inicial.html';
+    setInterval(function () {
+      location.href='inicial.html';
+    }, 200);
+    
 
   });
   </script>

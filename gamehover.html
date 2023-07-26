@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame Super Keyboard - Basic</title>
+    <meta name="description" content="Basic example for Super Keyboard."></meta>
+    <script src="https://rawgit.com/aframevr/aframe/c4aa63e/dist/aframe-master.min.js"></script>
+    <script src="aframe-super-keyboard.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://rawgit.com/caseyyee/aframe-ui-widgets/master/dist/aframe-ui-widgets.min.js"></script>
+  </head>
+  <body>
+    <a-scene>     
+      <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+      <a-entity id="hand" laser-controls="hand: right">
+        <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"></a-sky>
+      </a-entity>
+            <a-entity id="mybutton" ui-button  position="0.4 1.07 0.5">
+                <a-text value="Aceptar" position="0 0.060 0.010" rotation="-46.2 0 0 " scale="0.2 0.18 0.2" color="white" width="5.5"  align="center"></a-text>
+            </a-entity>
+      <!-- Change hand to `#hand` for VR. -->
+      <a-entity id="keyboard" super-keyboard="hand: #mouseCursor; imagePath: img/" position="0 1.076 -0.5" rotation="-30 0 0"></a-entity>
+    </a-scene>
+
+  </body>
+</html>
