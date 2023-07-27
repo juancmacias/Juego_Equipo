@@ -20,9 +20,8 @@
   <body>
  <a-scene generator>
   <a-assets>
-    <audio id="carga" src="sonido/SoundsCrate-Shimmering-Magic-Spell-2.mp3" preload="auto"></audio>
-    <audio id="roto" src="sonido/SoundsCrate-Dropping_Glass_1.mp3" preload="auto" position="0 2 1"></audio>
-    <audio id="sonidofenix" src="sonido/disparo_fenix.mp3" preload="auto" position="0 2 1"></audio>
+    <audio id="carga" src="https://cdn.glitch.global/2fe55501-51ba-4c32-999d-18bf56caf388/SoundsCrate-Shimmering-Magic-Spell-2.mp3?v=1690443687681" preload="auto"></audio>
+    <audio id="roto" src="https://cdn.glitch.global/2fe55501-51ba-4c32-999d-18bf56caf388/SoundsCrate-Dropping_Glass_1.mp3?v=1690443538975" preload="auto" position="0 2 1"></audio>
   </a-assets>
   
       <a-assets>
@@ -47,18 +46,18 @@
         color=" #eaf6f0"
       ></a-plane>
 
-                <a-entity camera="" look-controls="" position="0 2 50"  data-aframe-inspector-original-camera="">
-                    <a-text value="0 puntos" color="white" position="-0.8 0.7 -1" width="1.5" align="left"></a-text>
-                    <a-text id="nivel" value="Level 1" position="0.8 0.77 -1"  color="white" width="1.5" align="right"></a-text>
-                    <a-text id="time" value="60 secund" position="0.8 0.7 -1"  color="white" width="1.5" align="right"></a-text>
+                <a-entity camera="" orientationOffset="0 0 -100" look-controls="" position="0 2 50"  data-aframe-inspector-original-camera="">
+                    <a-text value="0 puntos" color="white" position="-0.8 0.3 -3" width="1.5" align="left"></a-text>
+                    <a-text id="nivel" value="Level 1" position="0.8 0.37 -3"  color="white" width="1.5" align="right"></a-text>
+                    <a-text id="time" value="60 secund" position="0.8 0.3 -3"  color="white" width="1.5" align="right"></a-text>
                     <a-entity cursor="" position="0 0 -1" raycaster="objects: .collidable, .collidable_f" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat"></a-entity>
-                </a-entity>
+               </a-entity>
                 <!-- Mandos -->
                   <a-entity oculus-touch-controls="hand: left"
                             collider-check raycaster="objects: .collidable, .collidable_f; showLine: true; far: 1"></a-entity>
                   <a-entity oculus-touch-controls="hand: right"
                             collider-check raycaster="objects: .collidable, .collidable_f; showLine: true; far: 1"></a-entity>
-  
+   
 
           <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"></a-sky>
       <a-light type="point" color="yellow" position="0 5 50"></a-light>
