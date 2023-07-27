@@ -15,9 +15,9 @@
       <audio id="disparo" src="sonido/soundscrate-body_impact_wood_8.mp3" preload="auto"></audio>
     </a-assets>
     <!-- Adds hand controls -->
-    <a-entity hand-controls="left"></a-entity>
-    <a-entity hand-controls="right"></a-entity>
 
+    <a-entity oculus-touch-controls="hand: left" thumbstick-logging></a-entity>
+    <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
     <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"></a-sky>
     <!-- Can also be controlled used with cursor -->
     <a-camera position="0 1 0">
@@ -43,6 +43,16 @@
     }, 200);
     
 
+  });
+  AFRAME.registerComponent('thumbstick-logging',{
+    init: function () {
+      this.el.addEventListener('abuttondown', this.logThumbstick);
+    },
+    logThumbstick: function (evt) {
+        setInterval(function () {
+        location.href='inicial.html';
+      }, 200);
+    }
   });
   </script>
 </body>
