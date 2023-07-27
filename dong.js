@@ -114,6 +114,7 @@ AFRAME.registerComponent('shootable_f', {
         seleccionado.addEventListener('click', () => {
           //seleccionado.removeChild(this.el)
           //var seleccion = document.querySelector('a-text').value;
+          seleccionado.setAttribute('sound', 'src: #sonidofenix; volume:30; autoplay: true');
             seleccionado.setAttribute("animation-mixer", "clip:RobotArmature|Robot_Death");
 
             seleccionado.removeAttribute('animation');
